@@ -1,0 +1,44 @@
+{% extends 'mainlog.html' %} {% block pleace %}
+<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #882D1B;">login
+    <p style="text-align: center; color:#882D1B;">{{mm}}</p>
+</p>
+
+<form class="mx-1 mx-md-4" action="{{ url_for('loginn')}}" method="post">
+
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="email" name="usr" id="form3Example3c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Your Email</label>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="password" name="pwd" id="form3Example4c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example4c">Password</label>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button style="background-color: #882D1B;" type="submit" class="btn btn-primary btn-lg">login</button>
+    </div>
+    <div class="form-check d-flex justify-content-center mb-5">
+        <label style="color: #882D1B;" style="color: #882D1B;" class="form-check-label" for="form2Example3">
+      if you dona have account <a href="/signup">signup</a>
+    </label>
+    </div>
+</form>
+
+</div>
+<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+    <img src="https://www.my.gov.sa/wps/wcm/connect/dec2dc20-3321-4aa6-ad99-c882d5a121af/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AD%D9%81%D8%B1-%D8%A7%D9%84%D8%A8%D8%A7%D8%B7%D9%86.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-dec2dc20-3321-4aa6-ad99-c882d5a121af-osEvYjx"
+        class="img-fluid mx-auto d-block" alt="Sample image" height="400" width="400">
+</div> {% endblock %}

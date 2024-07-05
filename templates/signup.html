@@ -1,0 +1,170 @@
+{% extends 'mainlog.html' %} {% block pleace %}
+<script>
+    $(document).ready(function() {
+        $('#form3Example4c, #form3Example4cd').on('keyup', function() {
+            if ($('#form3Example4c').val() != $('#form3Example4cd').val()) {
+                $('#submitBtn').attr('disabled', true);
+            } else {
+                $('#submitBtn').attr('disabled', false);
+            }
+        });
+    });
+</script>
+
+
+<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #882D1B;">Sign up</p>
+
+<form action="{{ url_for('signup')}}" method="post" class="mx-1 mx-md-4">
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="text" id="form3Example1c" name="hname" required class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example1c">Your Full Name</label>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="email" name="nusr" id="form3Example3c" required class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Your Email</label>
+        </div>
+    </div>
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="text" name="phone" id="form3Example3c" required class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Phone </label>
+        </div>
+    </div>
+
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="password" name="npwd" required id="form3Example4c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example4c">Password</label>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-key fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input type="password" id="form3Example4cd" required class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example4cd">Repeat your password</label>
+        </div>
+    </div>
+
+
+
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-list fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <select style="border: 1px solid #882D1B;" name="type" id="form3Example3cee" class="form-control" required>
+        <option value="student">Student</option>
+        <option value="Teacher">Teacher</option>
+      </select>
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Category</label>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4">
+        <div id="optional-field" style="display:none;" class="form-outline flex-fill mb-0">
+            <i style="color: #882D1B;" class="fas fa-list fa-lg me-3 fa-fw"></i>
+            <input style="border: 1px solid #882D1B;" type="checkbox" id="press-here-checkbox">
+            <label for="press-here-checkbox">Are you a doctor at the university?</label>
+        </div>
+    </div>
+
+    <div id="optional-inputs" style="display: none !important;" class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input style="border: 1px solid #882D1B;" type="text" name="data11" id="form3Example3c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Specialization</label>
+        </div>
+    </div>
+    <div id="optional-inputs2" style="display: none !important;" class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input style="border: 1px solid #882D1B;" type="text" name="data22" id="form3Example3c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Courses</label>
+        </div>
+    </div>
+    <div id="optional-inputs3" style="display: none !important;" class="d-flex flex-row align-items-center mb-4">
+        <i style="color: #882D1B;" class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <input style="border: 1px solid #882D1B;" type="text" name="data33" id="form3Example3c" class="form-control" />
+            <label style="color: #882D1B;" class="form-label" for="form3Example3c">Expertise</label>
+        </div>
+    </div>
+
+
+
+    <script>
+        const categoryDropdown = document.getElementById("form3Example3cee");
+        const optionalField = document.getElementById("optional-field");
+        var optionalInputs = document.getElementById("optional-inputs");
+        var optionalInputs2 = document.getElementById("optional-inputs2");
+        var optionalInputs3 = document.getElementById("optional-inputs3");
+
+        categoryDropdown.addEventListener("change", function() {
+            if (categoryDropdown.value === "Teacher") {
+                optionalField.style.display = "block";
+                optionalInputs.style.display = "block";
+                optionalInputs2.style.display = "block";
+                optionalInputs3.style.display = "block";
+
+            } else {
+                optionalField.style.display = "none";
+                optionalInputs.style.setProperty("display", "none", "important");
+                optionalInputs2.style.setProperty("display", "none", "important");
+                optionalInputs3.style.setProperty("display", "none", "important");
+            }
+        });
+    </script>
+
+
+
+    <script>
+        var checkbox = document.getElementById("press-here-checkbox");
+        var optionalInputs = document.getElementById("optional-inputs");
+        var optionalInputs2 = document.getElementById("optional-inputs2");
+        var optionalInputs3 = document.getElementById("optional-inputs3");
+
+        checkbox.addEventListener("change", function() {
+            if (this.checked) {
+                optionalInputs.style.setProperty("display", "none", "important");
+                optionalInputs2.style.setProperty("display", "none", "important");
+                optionalInputs3.style.setProperty("display", "none", "important");
+
+            } else {
+                optionalInputs.style.display = "block";
+                optionalInputs2.style.display = "block";
+                optionalInputs3.style.display = "block";
+
+            }
+        });
+    </script>
+
+
+
+
+
+    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button style="background-color: #882D1B;" id="submitBtn" disabled="e" type="submit" class="btn btn-primary btn-lg">Register</button>
+    </div>
+    <div class="form-check d-flex justify-content-center mb-5">
+        <label style="color: #882D1B;" class="form-check-label" for="form2Example3">
+      if you have account <a href="/">Login</a>
+    </label>
+    </div>
+</form>
+
+</div>
+<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+    <img src="https://www.my.gov.sa/wps/wcm/connect/dec2dc20-3321-4aa6-ad99-c882d5a121af/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AD%D9%81%D8%B1-%D8%A7%D9%84%D8%A8%D8%A7%D8%B7%D9%86.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-dec2dc20-3321-4aa6-ad99-c882d5a121af-osEvYjx"
+        class="img-fluid mx-auto d-block" alt="Sample image" height="400" width="400">
+</div> {% endblock %}
